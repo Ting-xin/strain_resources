@@ -46,6 +46,13 @@ class TreeView extends HTMLUListElement {
           p.innerHTML = child.content
           const img = data.querySelector('img')
           img.src = this.dirJSON.replace('json', 'png')
+          const textname = document.querySelector('#text-name')
+          if (this.dirJSON.includes('3')) {
+            console.log('test')
+            textname.innerHTML = '菌属特征及功能'
+          } else {
+            textname.innerHTML = '16S序列'
+          }
           liteModal.open('#data')
         })
       }

@@ -42,7 +42,7 @@ body {
 }
 
 header {
-  height: 10%;
+  height: 8%;
 }
 
 .header {
@@ -91,13 +91,18 @@ h2:hover {
   height: 100%;
 }
 
-.slide > .content > ul {
+.slide > .content > div {
   height: 75vh;
   width: 50%;
   margin-left: 16%;
+}
+
+.slide > .content > div > ul {
+  height: 72vh;
+  width: 100%;
   overflow-y: auto;
 }
-.slide > .content > ul > li {
+.slide > .content > div > ul > li {
   font-size: 28px;
 }
 
