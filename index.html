@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="./src/lite-modal.min.js"></script>
+    <script src="./src/main.js"></script>
+    <script type="module" src="./src/treeview.js"></script>
+    <script type="module" src="./src/slide.js"></script>
+    <title>Tree View</title>
+    <styles-test></styles-test>
+  </head>
+  <body>
+    <div class="hd-logo fl">
+      <a href="#">
+        <img id="logo-img" src="./resources/nnu-logo2.jpg" />
+      </a>
+    </div>
+    <div class="center">
+      <h1 id="textAnimation" data-text-anim="水稻单作/稻虾共作模式下菌种资源库">水稻单作/稻虾共作模式下菌种资源库</h1>
+    </div>
+    <header class="header">
+      <h2 id="select1" class="h2_active">96孔细胞培养板方法</h2>
+      <h2 id="select2">平板涂布法</h2>
+      <h2 id="select3">高通量方法</h2>
+    </header>
+    <div id="contentshow" data-component="contentshow">
+      <div role="list">
+        <div class="slide active">
+          <content class="content">
+            <ul is="tree-view" json="/resources/1_ck.json"></ul>
+            <ul is="tree-view" json="/resources/1_dx.json"></ul>
+          </content>
+        </div>
+      </div>
+      <div role="list">
+        <div class="slide">
+          <content class="content">
+            <ul is="tree-view" json="/resources/2_ck.json"></ul>
+            <ul is="tree-view" json="/resources/2_dx.json"></ul>
+          </content>
+        </div>
+      </div>
+      <div role="list">
+        <div class="slide">
+          <content class="content">
+            <ul is="tree-view" json="/resources/3_ck.json"></ul>
+            <ul is="tree-view" json="/resources/3_dx.json"></ul>
+          </content>
+        </div>
+      </div>
+    </div>
+    <div class="lite-modal" id="data">
+      <h3>name</h3>
+      <div class="header">
+        <h4>16S序列</h4>
+        <label class="switch" id="switch_label">
+          <input type="checkbox" id="my_checkbox" />
+          <span class="slider"></span>
+        </label>
+        <h4>发育树</h4>
+      </div>
+      <div id="slideshow" data-component="slideshow">
+        <div role="list">
+          <div class="slide active">
+            <div id="content-div"><p>content</p></div>
+          </div>
+        </div>
+        <div role="list">
+          <div class="slide">
+            <div id="content-div">
+              <img id="content-img" src="./resources/1_ck.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

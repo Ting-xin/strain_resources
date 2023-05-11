@@ -1,0 +1,325 @@
+@font-face {
+  font-family: 'My Font';
+  src: url('./resources/荆南麦圆体.otf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+ul,
+p {
+  font-family: 'My Font', sans-serif;
+  margin: 0;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #c1e6c6, #8ac6d1);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  height: 10%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.header > h4 {
+  margin: 0 10px;
+  padding: 0;
+}
+
+body > header > h2 {
+  width: 30%;
+  text-align: center;
+}
+h2:hover {
+  background-color: #ccc;
+  color: #fff;
+  box-shadow: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.h2_active {
+  outline: none;
+  box-shadow: 0 0 4px 2px #ccc;
+  background-color: rgb(141, 180, 146);
+  border-radius: 5px;
+}
+
+#contentshow {
+  display: block;
+  width: 100%;
+}
+
+.slide > .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.slide > .content > ul {
+  height: 75vh;
+  width: 50%;
+  margin-left: 16%;
+  overflow-y: auto;
+}
+.slide > .content > ul > li {
+  font-size: 28px;
+}
+
+h1 {
+  font-weight: bold;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+}
+
+#textAnimation {
+  height: 4%;
+  display: inline-block;
+  font-size: 60px;
+  text-align: center;
+  position: relative;
+  -webkit-text-stroke: 1px #135b4b;
+  color: transparent;
+  text-shadow: 0 0 10px #ccc;
+}
+
+#textAnimation::after {
+  content: attr(data-text-anim);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 7vh;
+  overflow: hidden;
+  color: #135b4b;
+  animation: textAnimation 3s ease-in-out;
+}
+
+@keyframes textAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.hd-logo {
+  height: 80px;
+  transition: 0.4s;
+  font-size: 0;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 50px;
+  /* background: #135b4b; */
+}
+#logo-img {
+  height: 80px;
+  vertical-align: middle;
+  transition: 0.4s;
+  color: #135b4b;
+}
+
+ul {
+  transition: transform 1s;
+}
+
+/* dialog */
+h1 {
+  margin-top: 5px;
+}
+
+#content-img {
+  width: 800px;
+  height: 600px;
+  margin-top: 20px;
+}
+
+.lite-modal {
+  padding: 20px;
+  background-color: white;
+  font-family: sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  line-height: 1.6em;
+  background: linear-gradient(to bottom, #c1e6c6, #8ac6d1);
+}
+
+#content-div {
+  margin-top: 10px;
+  width: 900px;
+  height: 675px;
+  text-align: center;
+}
+
+#content-div > p {
+  width: 100%;
+  height: 100%;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+[data-component='contentshow'] .slide {
+  display: none;
+}
+
+[data-component='contentshow'] .slide.active {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+[data-component='slideshow'] .slide {
+  display: none;
+}
+
+[data-component='slideshow'] .slide.active {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #731621;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #1b538d;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 显示滚动条并设置颜色和样式 */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+  border: 3px solid #f5f5f5;
+}
+
+@keyframes RGB {
+  0% {
+    color: hsl(0, 50%, 50%);
+  }
+  20% {
+    color: hsl(30, 50%, 50%);
+  }
+  40% {
+    color: hsl(60, 50%, 50%);
+  }
+  60% {
+    color: hsl(120, 50%, 50%);
+  }
+  80% {
+    color: hsl(240, 50%, 50%);
+  }
+  100% {
+    color: hsl(300, 50%, 50%);
+  }
+}
+
+::marker,
+strong {
+  animation-name: RGB;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
